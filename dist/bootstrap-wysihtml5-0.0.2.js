@@ -41,17 +41,21 @@
 
             "link":
                 "<li>" +
-                  "<div class='bootstrap-wysihtml5-insert-link-modal modal hide fade'>" +
-                    "<div class='modal-header'>" +
-                      "<a class='close' data-dismiss='modal'>&times;</a>" +
-                      "<h3>" + locale.link.insert + "</h3>" +
-                    "</div>" +
-                    "<div class='modal-body'>" +
-                      "<input value='http://' class='bootstrap-wysihtml5-insert-link-url input-xlarge'>" +
-                    "</div>" +
-                    "<div class='modal-footer'>" +
-                      "<a href='#' class='btn btn-default' data-dismiss='modal'>" + locale.link.cancel + "</a>" +
-                      "<a href='#' class='btn btn-primary' data-dismiss='modal'>" + locale.link.insert + "</a>" +
+                  "<div class='bootstrap-wysihtml5-insert-link-modal modal fade'>" +
+                    "<div class='modal-dialog'>" +
+                        "<div class='modal-content'>" +
+                            "<div class='modal-header'>" +
+                              "<a class='close' data-dismiss='modal'>&times;</a>" +
+                              "<h3>" + locale.link.insert + "</h3>" +
+                            "</div>" +
+                            "<div class='modal-body'>" +
+                              "<input value='http://' class='bootstrap-wysihtml5-insert-link-url input-xlarge'>" +
+                            "</div>" +
+                            "<div class='modal-footer'>" +
+                              "<a href='#' class='btn btn-default' data-dismiss='modal'>" + locale.link.cancel + "</a>" +
+                              "<a href='#' class='btn btn-primary' data-dismiss='modal'>" + locale.link.insert + "</a>" +
+                            "</div>" +
+                        "</div>" +
                     "</div>" +
                   "</div>" +
                   "<a class='btn btn-default' data-wysihtml5-command='createLink' title='" + locale.link.insert + "'><i class='glyphicon glyphicon-share'></i></a>" +
@@ -60,16 +64,20 @@
             "image":
                 "<li>" +
                   "<div class='bootstrap-wysihtml5-insert-image-modal modal hide fade'>" +
-                    "<div class='modal-header'>" +
-                      "<a class='close' data-dismiss='modal'>&times;</a>" +
-                      "<h3>" + locale.image.insert + "</h3>" +
-                    "</div>" +
-                    "<div class='modal-body'>" +
-                      "<input value='http://' class='bootstrap-wysihtml5-insert-image-url input-xlarge'>" +
-                    "</div>" +
-                    "<div class='modal-footer'>" +
-                      "<a href='#' class='btn btn-default' data-dismiss='modal'>" + locale.image.cancel + "</a>" +
-                      "<a href='#' class='btn btn-primary' data-dismiss='modal'>" + locale.image.insert + "</a>" +
+                    "<div class='modal-dialog'>" +
+                        "<div class='modal-content'>" +
+                            "<div class='modal-header'>" +
+                              "<a class='close' data-dismiss='modal'>&times;</a>" +
+                              "<h3>" + locale.image.insert + "</h3>" +
+                            "</div>" +
+                            "<div class='modal-body'>" +
+                              "<input value='http://' class='bootstrap-wysihtml5-insert-image-url input-xlarge'>" +
+                            "</div>" +
+                            "<div class='modal-footer'>" +
+                              "<a href='#' class='btn btn-default' data-dismiss='modal'>" + locale.image.cancel + "</a>" +
+                              "<a href='#' class='btn btn-primary' data-dismiss='modal'>" + locale.image.insert + "</a>" +
+                            "</div>" +
+                        "</div>" +
                     "</div>" +
                   "</div>" +
                   "<a class='btn btn-default' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "'><i class='glyphicon glyphicon-picture'></i></a>" +
