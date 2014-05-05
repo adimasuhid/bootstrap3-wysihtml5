@@ -1,6 +1,9 @@
 //edited by Ace Dimasuhid
 //ace.dimasuhid@gmail.com
 //
+//Note: Image uploader is dependent on filepicker
+//https://developers.inkfilepicker.com
+//call a set key first before running the filepicker command
 !function($, wysi) {
     "use strict";
 
@@ -63,23 +66,6 @@
 
             "image":
                 "<li>" +
-                  "<div class='bootstrap-wysihtml5-insert-image-modal modal fade'>" +
-                    "<div class='modal-dialog'>" +
-                        "<div class='modal-content'>" +
-                            "<div class='modal-header'>" +
-                              "<a class='close' data-dismiss='modal'>&times;</a>" +
-                              "<h3>" + locale.image.insert + "</h3>" +
-                            "</div>" +
-                            "<div class='modal-body'>" +
-                              "<input type='text' value='http://' class='bootstrap-wysihtml5-insert-image-url input-xlarge'>" +
-                            "</div>" +
-                            "<div class='modal-footer'>" +
-                              "<a href='#' class='btn btn-default' data-dismiss='modal'>" + locale.image.cancel + "</a>" +
-                              "<a href='#' class='btn btn-primary' data-dismiss='modal'>" + locale.image.insert + "</a>" +
-                            "</div>" +
-                        "</div>" +
-                    "</div>" +
-                  "</div>" +
                   "<a class='btn btn-default' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "'><i class='glyphicon glyphicon-picture'></i></a>" +
                 "</li>",
 
@@ -195,47 +181,14 @@
 
         initInsertImage: function(toolbar) {
             var self = this;
-            var insertImageModal = toolbar.find('.bootstrap-wysihtml5-insert-image-modal');
-            var urlInput = insertImageModal.find('.bootstrap-wysihtml5-insert-image-url');
-            var insertButton = insertImageModal.find('a.btn-primary');
-            var initialValue = urlInput.val();
-
-            var insertImage = function() {
-                var url = urlInput.val();
-                urlInput.val(initialValue);
-                self.editor.composer.commands.exec("insertImage", url);
-            };
-
-            urlInput.keypress(function(e) {
-                if(e.which == 13) {
-                    insertImage();
-                    insertImageModal.modal('hide');
-                }
-            });
-
-            insertButton.click(insertImage);
-
-            insertImageModal.on('shown', function() {
-                urlInput.focus();
-            });
-
-            insertImageModal.on('hide', function() {
-                self.editor.currentView.element.focus();
-            });
 
             toolbar.find('a[data-wysihtml5-command=insertImage]').click(function() {
-                var activeButton = $(this).hasClass("wysihtml5-command-active");
-
-                if (!activeButton) {
-                    insertImageModal.modal('show');
-                    insertImageModal.on('click.dismiss.modal', '[data-dismiss="modal"]', function(e) {
-                        e.stopPropagation();
-                    });
-                    return false;
-                }
-                else {
-                    return true;
-                }
+                //dependent on filepicker object being setup before click
+                filepicker.pick(function(fpfile){
+                    var url = fpfile.url;
+                    self.editor.composer.commands.exec("insertImage", url);
+                    self.editor.currentView.element.focus();
+                });
             });
         },
 
