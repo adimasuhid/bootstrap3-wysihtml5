@@ -49,7 +49,7 @@
                               "<h3>" + locale.link.insert + "</h3>" +
                             "</div>" +
                             "<div class='modal-body'>" +
-                              "<input value='http://' class='bootstrap-wysihtml5-insert-link-url input-xlarge'>" +
+                              "<input type='text' value='http://' class='bootstrap-wysihtml5-insert-link-url input-xlarge'>" +
                             "</div>" +
                             "<div class='modal-footer'>" +
                               "<a href='#' class='btn btn-default' data-dismiss='modal'>" + locale.link.cancel + "</a>" +
@@ -63,7 +63,7 @@
 
             "image":
                 "<li>" +
-                  "<div class='bootstrap-wysihtml5-insert-image-modal modal hide fade'>" +
+                  "<div class='bootstrap-wysihtml5-insert-image-modal modal fade'>" +
                     "<div class='modal-dialog'>" +
                         "<div class='modal-content'>" +
                             "<div class='modal-header'>" +
