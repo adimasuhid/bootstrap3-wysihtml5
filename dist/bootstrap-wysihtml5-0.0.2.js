@@ -10,7 +10,7 @@
             "font-styles":
                 "<li class='dropdown'>" +
                   "<a class='btn btn-default dropdown-toggle' data-toggle='dropdown' href='#'>" +
-                  "<i class='glyphicon glyphicon-font'></i>&nbsp;<span class='current-font'>" + locale.font_styles.normal + "</span>&nbsp;<b class='caret'></b>" +
+                  "<i class='glyphicon glyphicon-font'></i>&nbsp;<b class='caret'></b>" +
                   "</a>" +
                   "<ul class='dropdown-menu'>" +
                     "<li><a data-wysihtml5-command='formatBlock' data-wysihtml5-command-value='div'>" + locale.font_styles.normal + "</a></li>" +
@@ -400,9 +400,9 @@
                 h3: "Heading 3"
             },
             emphasis: {
-                bold: "Bold",
-                italic: "Italic",
-                underline: "Underline"
+                bold: "B",
+                italic: "I",
+                underline: "U"
             },
             lists: {
                 unordered: "Unordered list",
