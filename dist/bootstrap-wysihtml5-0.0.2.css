@@ -102,3 +102,7 @@ div.wysihtml5-toolbar div[data-wysihtml5-command-value="orange"] {
 input.bootstrap-wysihtml5-insert-link-url, input.bootstrap-wysihtml5-insert-link-url {
     width: 100%;
 }
+
+iframe.wysihtml5-sandbox {
+    height: 350px !important;
+}

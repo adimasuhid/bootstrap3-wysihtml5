@@ -174,10 +174,12 @@
 
             toolbar.find('a[data-wysihtml5-command=insertImage]').click(function() {
                 //dependent on filepicker object being setup before click
-                filepicker.pick(function(fpfile){
-                    var url = fpfile.url;
-                    self.editor.composer.commands.exec("insertImage", url);
-                    self.editor.currentView.element.focus();
+                filepicker.pick(function(blob){
+                    filepicker.convert(blob, { width: 800, fit: 'max'}, function(fpfile){
+                        var url = fpfile.url;
+                        self.editor.composer.commands.exec("insertImage", url);
+                        self.editor.currentView.element.focus();
+                    });
                 });
             });
         },
